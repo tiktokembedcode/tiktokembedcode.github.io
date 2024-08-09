@@ -8,10 +8,10 @@ function useExternalScripts(url: string) {
     const script = document.createElement("script");
 
     script.setAttribute("src", url);
-    head.appendChild(script);
+    head?.appendChild(script);
 
     return () => {
-      head.removeChild(script);
+      head?.removeChild(script);
     };
   }, [url]);
 }
@@ -59,10 +59,10 @@ const App = () => {
     try {
       var urlObject = new URL(url);
     } catch (e) {
-      return;
+      return '';
     }
 
-    const resourceId = urlObject.pathname.split("/").pop().replace("@", "");
+    const resourceId = urlObject ? urlObject.pathname.split("/").pop().replace("@", "") : '';
     let embedCode = `<blockquote class="tiktok-embed" cite="${url}" data-video-id="${resourceId}" data-embed-from="embed_page" style="max-width:605px; min-width:325px;"><section></section><a href="https://producer.ua" style="display:none;">talent manager</a></blockquote><script async src="https://www.tiktok.com/embed.js"></script>`;
 
     switch (embedType) {
