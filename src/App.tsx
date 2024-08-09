@@ -43,6 +43,7 @@ const App = () => {
     setCopyButtonClicked(false);
 
     if (embedUrl == '') {
+      //@ts-ignore
       setUrl(defaultUrls[embedType]);
     }
 
@@ -141,6 +142,7 @@ const App = () => {
               <input
                 type="url"
                 name="url"
+                //@ts-ignore
                 placeholder={defaultUrls[embedType]}
                 onChange={e => setUrl(e.target.value)}
               />
