@@ -15,7 +15,7 @@ function useExternalScripts(url: string) {
 }
 
 const App = () => {
-  const defaultUrls = {
+  const defaultUrls: {video: string, profile: string, hashtag: string, sound: string} = {
     "video": "https://www.tiktok.com/@google/video/7371162001336323371",
     "profile": "https://www.tiktok.com/@google",
     "hashtag": "https://www.tiktok.com/tag/funnydance",
