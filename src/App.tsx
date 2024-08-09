@@ -3,17 +3,15 @@ import Content from "./components/Content.tsx";
 import copy from 'copy-to-clipboard';
 
 function useExternalScripts(url: string) {
-  useEffect(() => {
-    const head = document.querySelector("head");
-    const script = document.createElement("script");
+  const head = document.querySelector("head");
+  const script = document.createElement("script");
 
-    script.setAttribute("src", url);
-    head?.appendChild(script);
+  script.setAttribute("src", url);
+  head?.appendChild(script);
 
-    return () => {
-      head?.removeChild(script);
-    };
-  }, [url]);
+  return () => {
+    head?.removeChild(script);
+  };
 }
 
 const App = () => {
@@ -25,12 +23,13 @@ const App = () => {
   const [error, setError] = useState<string>('');
   const embedCodeRef = useRef<HTMLInputElement | null>(null);
 
-  useExternalScripts("https://www.tiktok.com/embed.js");
+
 
   useEffect(() => {
     setError('');
     setCopyButtonClicked(false);
     generateEmbedCode();
+    useExternalScripts("https://www.tiktok.com/embed.js");
   }, [url]);
 
   useEffect(() => {
