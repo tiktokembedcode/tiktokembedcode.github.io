@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2 {
+  @apply mt-4 mb-2 text-xl font-bold sm:text-2xl;
+}
+
+a {
+  @apply text-sky-600;
+}
+
+p,
+ol {
+  @apply mb-4
+}
+
+ol {
+  @apply pl-4 list-decimal;
+}
+
+input {
+  @apply px-4 py-2 rounded;
+}
+
+input {
+  @apply w-full border-[1px];
+}
