@@ -15,6 +15,13 @@ function useExternalScripts(url: string) {
 }
 
 const App = () => {
+  const defaultUrls = {
+    "video": "https://www.tiktok.com/@google/video/7371162001336323371",
+    "profile": "https://www.tiktok.com/@google",
+    "hashtag": "https://www.tiktok.com/tag/funnydance",
+    "sound": "https://www.tiktok.com/music/original-sound-Xwitter-7397447022627932934",
+  };
+
   const [embedType, setEmbedType] = useState<string>("video")
   const [url, setUrl] = useState<string>('https://www.tiktok.com/@google/video/7371162001336323371');
   const [embedString, setEmbedString] = useState<string>('');
@@ -36,20 +43,7 @@ const App = () => {
     setCopyButtonClicked(false);
 
     if (embedUrl == '') {
-      switch (embedType) {
-        case "video":
-          setUrl("https://www.tiktok.com/@google/video/7371162001336323371");
-          break;
-        case "profile":
-          setUrl("https://www.tiktok.com/@google");
-          break;
-        case "hashtag":
-          setUrl("https://www.tiktok.com/tag/funnydance");
-          break;
-        case "sound":
-          setUrl("https://www.tiktok.com/music/original-sound-Xwitter-7397447022627932934");
-          break;
-      }
+      setUrl(defaultUrls[embedType]);
     }
 
   }, [embedType]);
@@ -147,7 +141,7 @@ const App = () => {
               <input
                 type="url"
                 name="url"
-                placeholder={'Enter a URL to create an embed code'}
+                placeholder={defaultUrls[embedType]}
                 onChange={e => setUrl(e.target.value)}
               />
             </label>
