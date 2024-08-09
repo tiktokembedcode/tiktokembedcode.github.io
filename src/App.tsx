@@ -62,7 +62,7 @@ const App = () => {
       return '';
     }
 
-    const resourceId = urlObject ? urlObject.pathname.split("/").pop().replace("@", "") : '';
+    const resourceId = urlObject ? urlObject?.pathname?.split("/").pop().replace("@", "") : '';
     let embedCode = `<blockquote class="tiktok-embed" cite="${url}" data-video-id="${resourceId}" data-embed-from="embed_page" style="max-width:605px; min-width:325px;"><section></section><a href="https://producer.ua" style="display:none;">talent manager</a></blockquote><script async src="https://www.tiktok.com/embed.js"></script>`;
 
     switch (embedType) {
@@ -78,7 +78,7 @@ const App = () => {
     }
 
     setEmbedString(embedCode);
-    setEmbedUrl(embedUrl);
+    // setEmbedUrl(embedUrl);
 
     return embedCode;
   }
