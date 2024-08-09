@@ -99,50 +99,50 @@ const App = () => {
         </div>
       </div>
       <div className={'max-w-[1080px] mx-auto my-4 p-4 bg-white sm:p-10'}>
-        <div>
-          <b>Which type of embed would you like to create?</b>
-          <div className={'flex gap-4'}>
-            <label className={'flex gap-2'}>
-              <input
-                type="radio"
-                name="type"
-                value="video"
-                checked={embedType === "video"}
-                onChange={e => setEmbedType(e.target.value)}
-              />Video
-            </label>
-            <label className={'flex gap-2'}>
-              <input
-                type="radio"
-                name="type"
-                value="profile"
-                checked={embedType === "profile"}
-                onChange={e => setEmbedType(e.target.value)}
-              />Profile
-            </label>
-            <label className={'flex gap-2'}>
-              <input
-                type="radio"
-                name="type"
-                value="hashtag"
-                checked={embedType === "hashtag"}
-                onChange={e => setEmbedType(e.target.value)}
-              />Hashtag
-            </label>
-            <label className={'flex gap-2'}>
-              <input
-                type="radio"
-                name="type"
-                value="sound"
-                checked={embedType === "sound"}
-                onChange={e => setEmbedType(e.target.value)}
-              />Sound
-            </label>
-          </div>
-        </div>
         <div
           className={`flex flex-col mb-4 justify-between gap-4 ${embedType === "video" && 'md:flex-row'}`}>
-          <div className={'flex flex-col w-full gap-2 mt-[18px]'}>
+          <div className={'flex flex-col w-full gap-2 justify-center'}>
+            <div>
+              <b>Which type of embed would you like to create?</b>
+              <div className={'flex gap-4'}>
+                <label className={'flex gap-2'}>
+                  <input
+                    type="radio"
+                    name="type"
+                    value="video"
+                    checked={embedType === "video"}
+                    onChange={e => setEmbedType(e.target.value)}
+                  />Video
+                </label>
+                <label className={'flex gap-2'}>
+                  <input
+                    type="radio"
+                    name="type"
+                    value="profile"
+                    checked={embedType === "profile"}
+                    onChange={e => setEmbedType(e.target.value)}
+                  />Profile
+                </label>
+                <label className={'flex gap-2'}>
+                  <input
+                    type="radio"
+                    name="type"
+                    value="hashtag"
+                    checked={embedType === "hashtag"}
+                    onChange={e => setEmbedType(e.target.value)}
+                  />Hashtag
+                </label>
+                <label className={'flex gap-2'}>
+                  <input
+                    type="radio"
+                    name="type"
+                    value="sound"
+                    checked={embedType === "sound"}
+                    onChange={e => setEmbedType(e.target.value)}
+                  />Sound
+                </label>
+              </div>
+            </div>
             <label>
               <input
                 type="url"
